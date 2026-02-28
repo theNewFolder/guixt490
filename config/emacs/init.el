@@ -98,3 +98,11 @@
 ;; === Org Mode ===
 (setq org-ellipsis " ▾"
       org-hide-emphasis-markers t)
+
+;; === EWM - Emacs Wayland Manager ===
+(when (file-exists-p "~/ewm/lisp")
+  (add-to-list 'load-path "~/ewm/lisp")
+  (setq ewm-module-path
+        (expand-file-name "~/ewm/compositor/target/debug/libewm_core.so"))
+  (setenv "EWM_MODULE_PATH" ewm-module-path)
+  (require 'ewm nil t))
