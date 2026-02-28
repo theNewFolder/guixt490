@@ -1,0 +1,69 @@
+[global]
+# Display
+monitor = 0
+follow = mouse
+width = 350
+height = 300
+offset = 10x40
+origin = top-right
+notification_limit = 0
+
+# Appearance
+background = "#0d0e1c"
+foreground = "#ffffff"
+frame_color = "#79a8ff"
+frame_width = 2
+corner_radius = 8
+font = JetBrains Mono 10
+markup = full
+format = "<b>%s</b>\n%b"
+alignment = left
+vertical_alignment = center
+icon_position = left
+max_icon_size = 32
+padding = 12
+horizontal_padding = 12
+text_icon_padding = 12
+line_height = 0
+separator_height = 2
+separator_color = "#79a8ff"
+
+# Behavior
+show_age_threshold = 60
+sort = yes
+idle_threshold = 120
+indicate_hidden = yes
+transparency = 0
+sticky_history = yes
+history_length = 20
+hide_duplicate_count = no
+
+# Timeouts (in seconds)
+timeout = 10
+default_timeout = 10
+
+# Urgency
+[urgency_low]
+timeout = 5
+background = "#0d0e1c"
+foreground = "#44bc44"
+frame_color = "#44bc44"
+
+[urgency_normal]
+timeout = 10
+background = "#0d0e1c"
+foreground = "#79a8ff"
+frame_color = "#79a8ff"
+
+[urgency_critical]
+timeout = 0
+background = "#0d0e1c"
+foreground = "#ff5f59"
+frame_color = "#ff5f59"
+
+# Key bindings
+[shortcuts]
+close = ctrl+space
+close_all = ctrl+shift+space
+history = ctrl+grave
+context = ctrl+shift+grave

@@ -1,0 +1,19 @@
+[Unit]
+Description=Build daemon for GNU Guix
+After=network.target
+
+[Service]
+ExecStart=/var/guix/profiles/per-user/root/current-guix/bin/guix-daemon \
+    --build-users-group=guixbuild \
+    --max-jobs=4 \
+    --cores=8 \
+    --substitute-urls="https://bordeaux.guix.gnu.org https://ci.guix.gnu.org https://substitutes.nonguix.org"
+Environment="GUIX_LOCPATH=/var/guix/profiles/per-user/root/current-guix/lib/locale" "LC_ALL=en_US.utf8"
+RemainAfterExit=yes
+StandardOutput=journal
+StandardError=journal
+TasksMax=8192
+LimitNOFILE=8192
+
+[Install]
+WantedBy=multi-user.target
